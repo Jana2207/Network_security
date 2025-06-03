@@ -27,12 +27,21 @@ if __name__ == '__main__':
         # Output the paths to the generated train and test datasets
         print(datainjestionartifact)
 
-        # data
+                # Create DataValidationConfig object using the training pipeline configuration
         datavalidationconfig = DataValidationConfig(trainingpipelineconfig)
+
+        # Initialize the DataValidataion class with data ingestion artifacts and validation config
         datavalidation = DataValidataion(datainjestionartifact, datavalidationconfig)
+
+        # Log the beginning of the data validation process
         logging.info("Initiating the data validation")
+
+        # Trigger the data validation process and get the resulting artifact
         datavalidationartifact = datavalidation.initiate_data_validation()
+
+        # Print the DataValidationArtifact object to verify validation results
         print(datavalidationartifact)
+
 
     except Exception as e:
         # Raise custom exception with detailed traceback for better debugging
