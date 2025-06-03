@@ -52,3 +52,55 @@ class DataIngestionConfig:
         # MongoDB collection and database names used for fetching data
         self.collection_name: str = training_pipeline.DATA_INGESTION_COLLECTION_NAME
         self.database_name: str = training_pipeline.DATA_INGESTION_DATABASE_NAME
+
+# This class constructs file paths and setting needed for data validation
+class DataValidationConfig:
+    def __init__(self, training_pipeline_config:TrainingPipeConfig):
+        # Main directory where validation data is stored
+        self.data_validation_dir: str = os.path.join(
+            training_pipeline_config.artifact_dir, 
+            training_pipeline.DATA_VALIDATION_DIR_NAME
+        )
+
+        # File path for valid data
+        self.valid_data_dir: str = os.path.join(
+            self.data_validation_dir, 
+            training_pipeline.DATA_VALIDATION_VALID_DIR
+        )
+
+        # File path for the invalid data
+        self.invalid_data_dir: str = os.path.join(
+            self.data_validation_dir,
+            training_pipeline.DATA_VALIDATION_INVALID_DIR
+        )
+
+        # File name for the valid train data
+        self.valid_train_file_path: str = os.path.join(
+            self.valid_data_dir,
+            training_pipeline.TRAIN_FILE_NAME
+        )
+
+        # File name for the valid test data
+        self.valid_test_file_path: str = os.path.join(
+            self.valid_data_dir,
+            training_pipeline.TEST_FILE_NAME
+        )
+
+        # File name for the invalid train data
+        self.invalid_train_file_path: str = os.path.join(
+            self.invalid_data_dir,
+            training_pipeline.TRAIN_FILE_NAME
+        )
+
+        # File name for the inalid test data
+        self.invalid_test_file_path: str = os.path.join(
+            self.invalid_data_dir,
+            training_pipeline.TEST_FILE_NAME
+        )
+
+        # File path and file name for the drift report
+        self.drift_report_file_path: str = os.path.join(
+            self.data_validation_dir,
+            training_pipeline.DATA_VALIDATION_DRIFT_REPODT_DIR,
+            training_pipeline.DATA_VALIDATION_DRIFT_REPORT_FILE_NAME
+        )

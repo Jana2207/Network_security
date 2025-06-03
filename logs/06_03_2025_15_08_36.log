@@ -1,0 +1,8 @@
+[2025-06-03 15:08:38,881] 22 root - INFO - Initiating the data ingestion process.
+[2025-06-03 15:08:41,312] 87 root - INFO - Performed train-test split on the data.
+[2025-06-03 15:08:41,312] 88 root - INFO - Exited split_data_as_train_test method from DataIngestion.
+[2025-06-03 15:08:41,319] 94 root - INFO - Exporting train and test file paths.
+[2025-06-03 15:08:41,392] 104 root - INFO - Exported train and test file paths.
+[2025-06-03 15:08:41,402] 33 root - INFO - Initiating the data validation
+[2025-06-03 15:08:41,469] 38 root - INFO - Required number of columns: 2 
+[2025-06-03 15:08:41,469] 39 root - INFO - Available number of columns: 31
