@@ -1,8 +1,8 @@
 # Importing required libraries
 import os
 import sys
-import pandas
-import numpy
+import pandas as pd
+import numpy as np
 
 # Defining the target column for the machine learning model
 TARGET_COLUMN = "Result"
@@ -29,3 +29,17 @@ DATA_VALIDATION_VALID_DIR: str = "validated"                # Sub-directory for 
 DATA_VALIDATION_INVALID_DIR: str = "invalid"                # Sub-directory for invalid data
 DATA_VALIDATION_DRIFT_REPODT_DIR: str = "drift_report"      # Sub-directory for drift report  
 DATA_VALIDATION_DRIFT_REPORT_FILE_NAME: str = "report.yaml" # Drift report file name
+
+# Data Transformation related constants
+DATA_TRANSFORMATION_DIR_NAME: str = "transformation"                    # Directory for data transformation
+DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR: str = "transformed"           # Directory for transformed data
+DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR: str = "transformed_object"  # directory for transformed object
+DATA_TRANSFORMATION_TRAIN_FILE_PATH: str = "train.npy"                  # Transformed train numpy array file path         
+DATA_TRANSFORMATION_TEST_FILE_PATH: str = "test.npy"                    # Transformed test numpy array file path
+PRE_PROCESSING_OBJECT_FILE_NAME: str = "preprocessing.pkl"              # transfromed object file file path
+## Parameters for KNN imputer
+DATA_TRANSFORMATION_IMPUTER_PARAMETERS: dict ={                     
+    "missing_values":np.nan,
+    "n_neighbors":3,
+    "weights":"uniform"
+}

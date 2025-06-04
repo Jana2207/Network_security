@@ -104,3 +104,34 @@ class DataValidationConfig:
             training_pipeline.DATA_VALIDATION_DRIFT_REPODT_DIR,
             training_pipeline.DATA_VALIDATION_DRIFT_REPORT_FILE_NAME
         )
+
+# This class construct the file path and settings needed for data transformation
+class DataTransformationConfig:
+    def __init__(self, training_pipeline_config : TrainingPipeConfig):
+
+        # Main directory where transformed data store
+        self.transformation_dir = os.path.join(
+            training_pipeline_config.artifact_dir, 
+            training_pipeline.DATA_TRANSFORMATION_DIR_NAME 
+        )
+
+        # File path for transformed train data
+        self.tranformed_train_file_path = os.path.join(
+            self.transformation_dir,
+            training_pipeline.DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,
+            training_pipeline.DATA_TRANSFORMATION_TRAIN_FILE_PATH.replace("csv", "npy")
+        )
+
+        # File path for transformed test data
+        self.transformed_test_file_path = os.path.join(
+            self.transformation_dir,
+            training_pipeline.DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,
+            training_pipeline.DATA_TRANSFORMATION_TEST_FILE_PATH.replace("csv", "npy")
+        )
+
+        # File path for transformation object
+        self.transformed_obj_file_path = os.path.join(
+            self.transformation_dir,
+            training_pipeline.DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR,
+            training_pipeline.PRE_PROCESSING_OBJECT_FILE_NAME
+        )

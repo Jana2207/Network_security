@@ -3,8 +3,8 @@ from dataclasses import dataclass
 # Artifact class to hold file paths for the training and testing datasets
 @dataclass
 class DataIngestionArtifact:
-    trained_file_path: str  # Training dataset file path
-    test_file_path: str     # Testing dataset file path
+    trained_file_path: str  
+    test_file_path: str     
 
 @dataclass
 class DataValidationArtifact:
@@ -14,4 +14,10 @@ class DataValidationArtifact:
     invalid_train_file_path: str
     invalid_test_file_path: str
     drift_report_file_path: str
+
+@dataclass
+class DataTransformationArtifact:
+    transformed_object_file_path: str
+    transformed_train_file_path: str
+    transformed_test_file_path: str
     
