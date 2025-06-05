@@ -6,9 +6,11 @@ from networksecurity.entity.config_entity import(
     DataIngestionConfig, 
     TrainingPipeConfig, 
     DataValidationConfig,
-    DataTransformationConfig)
+    DataTransformationConfig,
+    ModelTrainingConfig)
 from networksecurity.components.data_validation import DataValidataion
 from networksecurity.components.data_transformation import DataTransformation
+from networksecurity.components.model_trainer import ModelTrainer   
 import sys
 
 # Entry point for the data ingestion process
@@ -58,6 +60,13 @@ if __name__ == '__main__':
         datatransformationartifact = datatransformation.initiate_data_transformation()
         print(datatransformationartifact)
         logging.info("Data transformation competed")
+
+        logging.info("Starting the model training")
+        modeltraininigcongif = ModelTrainingConfig(trainingpipelineconfig)
+        modeltraininng = ModelTrainer(model_training_config=modeltraininigcongif,
+                                      data_transformation_artifact=datatransformationartifact)
+        modeltrainingartifact = modeltraininng.initiate_model_training()
+        logging.info("Model training completed and Model training artifact created")
 
     except Exception as e:
         # Raise custom exception with detailed traceback for better debugging

@@ -135,3 +135,24 @@ class DataTransformationConfig:
             training_pipeline.DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR,
             training_pipeline.PRE_PROCESSING_OBJECT_FILE_NAME
         )
+
+# This class constructs the file path and settings for model trainong
+class ModelTrainingConfig:
+    def __init__(self, training_pipeline_config : TrainingPipeConfig):
+
+        # Main function where trained model stored
+        self.model_trainer_dir = os.path.join(
+            training_pipeline_config.artifact_dir,
+            training_pipeline.MODEL_TRAINER_DIR_NAME
+        )
+
+        # File path for trained model
+        self.trained_model_file_path = os.path.join(
+            self.model_trainer_dir,
+            training_pipeline.MODEL_TRAINER_TRAINED_MODEL_DIR,
+            training_pipeline.MODEL_FILE_NAME
+        )
+
+        self.expected_accuracy: float = training_pipeline.MODEL_TRAINER_EXPECTED_SCORE
+        self.overfitting_underfitting_threshold: float = training_pipeline.MODEL_TRAINER_OVERFITTING_UNDERFITTING_THRESHOLD
+        

@@ -14,6 +14,8 @@ FILE_NAME: str = "Phising_data.csv"     # Raw data filename extracted from Mongo
 TRAIN_FILE_NAME: str = "train.csv"      # Training dataset filename
 TEST_FILE_NAME: str = "test.csv"        # Testing dataset filename
 SCHEMA_FILE_PATH: str = os.path.join("data_schema","schema.yaml")   # Data schema file path
+SAVED_MODEL_DIR = os.path.join("saved_models")
+MODEL_FILE_NAME: str = "model.pkl"
 
 # Data ingestion-related constants (used to generate directory/file paths)
 DATA_INGESTION_COLLECTION_NAME: str = "NetworkSecurity"  # MongoDB collection name
@@ -43,3 +45,11 @@ DATA_TRANSFORMATION_IMPUTER_PARAMETERS: dict ={
     "n_neighbors":3,
     "weights":"uniform"
 }
+
+# Model trainer related constants/parameters
+MODEL_TRAINER_DIR_NAME: str = "model_trainer"
+MODEL_TRAINER_TRAINED_MODEL_DIR: str = "trained_model"
+# MODEL_TRAINER_TRAINED_MODEL_NAME: str = "model.pkl"
+MODEL_TRAINER_EXPECTED_SCORE: float = 0.95
+MODEL_TRAINER_OVERFITTING_UNDERFITTING_THRESHOLD: float = 0.05
+

@@ -20,4 +20,18 @@ class DataTransformationArtifact:
     transformed_object_file_path: str
     transformed_train_file_path: str
     transformed_test_file_path: str
+
+@dataclass
+class ClassificationMetricArtifact:
+    f1_score:str
+    precision_score: str
+    recall: str
+    accuracy: str
+    auc_roc: str
+
+@dataclass
+class ModelTrainingArtifact:
+    trained_model_path : str
+    train_metric_artifact: ClassificationMetricArtifact
+    test_metric_artifact: ClassificationMetricArtifact
     
