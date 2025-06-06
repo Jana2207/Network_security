@@ -4,6 +4,10 @@ import sys
 import pandas as pd
 import numpy as np
 
+# To track mlruns in dagshub
+import dagshub
+dagshub.init(repo_owner='Jana2207', repo_name='Network_security', mlflow=True)
+
 # Project-specific logging and exception handling
 from networksecurity.logging.logger import logging
 from networksecurity.exception.exception import NetworkSecurityException

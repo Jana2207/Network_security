@@ -117,6 +117,8 @@ class DataTransformation:
                 transformed_test_file_path=self.data_transformation_config.transformed_test_file_path
             )
 
+            save_object("final_model/preprocessor.pkl", pre_processor_obj)
+
             return data_transformation_artifcat
 
         except Exception as e:
