@@ -99,6 +99,7 @@ class TrainingPipeline:
         except Exception as e:
             raise NetworkSecurityException(e,sys)
         
+        
     def run_pipeline(self):
         try:
             data_ingestion_artifact = self.start_data_ingestion()

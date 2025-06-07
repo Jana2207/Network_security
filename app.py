@@ -74,6 +74,6 @@ async def predict_route(request: Request, file:UploadFile=File(...)):
         return templates.TemplateResponse("table.html", {"request":request, "table": table_html}) 
     except Exception as e:
         raise NetworkModel(e, sys)
-      
+    
 if __name__=="__main__":
     app_run(app,host="localhost",port=8000)
