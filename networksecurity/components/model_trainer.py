@@ -110,31 +110,31 @@ class ModelTrainer:
         params = {
             "Decision Tree": {
             'criterion': ['gini', 'entropy', 'log_loss'],
-            # 'splitter': ['best', 'random'],
-            # 'max_features': ['sqrt', 'log2'],
+            'splitter': ['best', 'random'],
+            'max_features': ['sqrt', 'log2'],
             },
             "Random Forest": {
             'criterion': ['gini', 'entropy', 'log_loss'],
-            # 'max_features': ['sqrt', 'log2', None],
-            # 'n_estimators': [8, 16, 32, 64, 128, 256],
+            'max_features': ['sqrt', 'log2', None],
+            'n_estimators': [8, 16, 32, 64, 128, 256],
             },
             "Gradient Boosting": {
             'loss': ['log_loss', 'exponential'],
-            # 'learning_rate': [0.1, 0.01, 0.05, 0.001],
-            # 'subsample': [0.6, 0.7, 0.75, 0.85, 0.9],
-            # 'criterion': ['squared_error', 'friedman_mse'],
-            # 'max_features': ['auto', 'sqrt', 'log2'],
-            # 'n_estimators': [8, 16, 32, 64, 128, 256],
+            'learning_rate': [0.1, 0.01, 0.05, 0.001],
+            'subsample': [0.6, 0.7, 0.75, 0.85, 0.9],
+            'criterion': ['squared_error', 'friedman_mse'],
+            'max_features': ['auto', 'sqrt', 'log2'],
+            'n_estimators': [8, 16, 32, 64, 128, 256],
             },
             "Logistic Regression": {
             'penalty': ['l1', 'l2', 'elasticnet', 'none'],
-            # 'C': [0.01, 0.1, 1, 10],
-            # 'solver': ['newton-cg', 'lbfgs', 'liblinear', 'saga'],
-            # 'max_iter': [100, 200, 500],
+            'C': [0.01, 0.1, 1, 10],
+            'solver': ['newton-cg', 'lbfgs', 'liblinear', 'saga'],
+            'max_iter': [100, 200, 500],
             },
             "AdaBoost": {
             'learning_rate': [0.1, 0.01, 0.001],
-            # 'n_estimators': [8, 16, 32, 64, 128, 256],
+            'n_estimators': [8, 16, 32, 64, 128, 256],
             }
         }
 

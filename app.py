@@ -73,7 +73,7 @@ async def predict_route(request: Request, file:UploadFile=File(...)):
         table_html = df.to_html(classes="table table-striped")
         return templates.TemplateResponse("table.html", {"request":request, "table": table_html}) 
     except Exception as e:
-        raise NetworkModel(e, sys)
+        raise NetworkSecurityException(e, sys)
     
 if __name__=="__main__":
-    app_run(app,host="localhost",port=8000)
+    app_run(app,host="0.0.0.0",port=8000)
