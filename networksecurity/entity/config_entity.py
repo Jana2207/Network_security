@@ -14,6 +14,7 @@ class TrainingPipeConfig:
         self.pipeline_name = training_pipeline.PIPELINE_NAME  # e.g., "NetowrkSecurity"
         self.artifact_name = training_pipeline.ARTIFICT_DIR   # e.g., "Artifacts"
         self.artifact_dir = os.path.join(self.artifact_name, timestamp)  # Full path to this run's artifact directory
+        self.model_dir=os.path.join("final_model") # path for the final model
         self.timestamp: str = timestamp  # Save formatted timestamp for traceability
 
 # This class constructs file paths and settings needed for data ingestion
